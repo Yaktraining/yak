@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import Image from 'next/image';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -58,6 +59,7 @@ const Navigation = ({ links }) => {
       >
         <MenuIcon />
       </StyledIconButton>
+      <Image src="/logo.svg" alt="YAK" width="64" height="64" />
       <StyledToolbar>
         <Drawer open={open} onClose={handleClose}>
           {links}
