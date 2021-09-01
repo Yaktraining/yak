@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import Image from 'next/image';
 import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
 import MenuIcon from '@material-ui/icons/Menu';
-import Typography from './Typography';
-import { IconButton } from './Button';
 import Drawer from './Drawer';
 
 const StyledToolbar = styled(Toolbar)`
@@ -16,16 +14,6 @@ const StyledToolbar = styled(Toolbar)`
       display: flex;
       justify-content: flex-end;
       width: 100%;
-    }
-  }
-`;
-
-const NavigationTypography = styled(Typography)`
-  && {
-    padding: 24px;
-    text-align: center;
-    @media (min-width: 840px) {
-      padding: 0 16px;
     }
   }
 `;
@@ -42,6 +30,7 @@ const StyledAppBar = styled(AppBar)`
   && {
     display: flex;
     flex-direction: row;
+    box-shadow: none;
   }
 `;
 
@@ -52,14 +41,13 @@ const Navigation = ({ links }) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <StyledAppBar position="static">
+    <StyledAppBar position='static'>
       <StyledIconButton
         onClick={handleDrawer}
         color="inherit"
       >
         <MenuIcon />
       </StyledIconButton>
-      <Image src="/logo.svg" alt="YAK" width="64" height="64" />
       <StyledToolbar>
         <Drawer open={open} onClose={handleClose}>
           {links}
@@ -78,4 +66,4 @@ Navigation.defaultProps = {
   links: null,
 };
 
-export { NavigationTypography, Navigation };
+export default Navigation;
