@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
-import Toolbar from '@material-ui/core/Toolbar';
-import MenuIcon from '@material-ui/icons/Menu';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from './Drawer';
 
 const StyledToolbar = styled(Toolbar)`
@@ -41,7 +41,7 @@ const Navigation = ({ links }) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <StyledAppBar position='static'>
+    <StyledAppBar position="static">
       <StyledIconButton
         onClick={handleDrawer}
         color="inherit"

@@ -1,5 +1,5 @@
 import React from 'react';
-import MuiTypography from '@material-ui/core/Typography';
+import MuiTypography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 
 const Typography = ({

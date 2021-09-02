@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MuiDrawer from '@material-ui/core/Drawer';
+import MuiDrawer from '@mui/material/Drawer';
 
 const Drawer = ({ children, ...props }) => (
   <MuiDrawer
