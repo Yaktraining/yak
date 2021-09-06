@@ -5,6 +5,21 @@ const typeFaces = {
   primary: 'Open Sans, sans-serif',
 };
 
+const colors = {
+  primary: {
+    main: '#219653',
+  },
+  common: {
+    black: '#18191A',
+    white: '#ffffff',
+  },
+  secondary: {
+    main: '#FF7A5A',
+  },
+};
+
+const { primary, common, secondary } = colors;
+
 const theme = createTheme({
   typography: {
     fontFamily: 'Inter, sans-serif',
@@ -61,14 +76,23 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#219653',
+      main: primary.main,
     },
     common: {
-      black: '#18191A',
-      white: '#ffffff',
+      black: common.black,
+      white: common.white,
     },
     secondary: {
-      main: '#FF7A5A',
+      main: secondary.main,
+    },
+  },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: common.white,
+        },
+      },
     },
   },
 });

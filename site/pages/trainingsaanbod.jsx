@@ -3,10 +3,10 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import Layout from '../components/Layout';
 
-export default function Home() {
+export default function TrainingsAanbod() {
   return (
     <Layout>
-      <h1>Home</h1>
+      <h1>Training en events</h1>
     </Layout>
   );
 }

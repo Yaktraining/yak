@@ -7,22 +7,18 @@ const StyledAnchor = styled.a`
 `;
 
 const Anchor = ({
-  href, target, children,
+  children,
 }) => (
-  <StyledAnchor href={href} target={target} rel={target === '_blank' ? 'nofollow noopener' : null}>
+  <StyledAnchor>
     {children}
   </StyledAnchor>
 );
 
 Anchor.propTypes = {
-  href: PropTypes.string,
-  target: PropTypes.string,
   children: PropTypes.node,
 };
 
 Anchor.defaultProps = {
-  href: null,
-  target: null,
   children: null,
 };
 

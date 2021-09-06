@@ -1,23 +1,37 @@
 import React from 'react';
+import Link from 'next/link';
+import styled from '@emotion/styled';
 import Navigation from './Navigation';
 import Typography from './Typography';
+
+const StyledAnchor = styled.a`
+  text-decoration: none;
+`;
+
+const StyledTypography = styled(Typography)`
+  padding: 0 24px;
+`;
 
 const links = [
   {
     name: 'Home',
-    href: '#',
+    href: '/',
   },
   {
-    name: 'Services',
-    href: '#',
+    name: 'Blog',
+    href: '/blog',
   },
   {
-    name: 'About',
-    href: '#',
+    name: 'Onze aanpak',
+    href: '/onze-aanpak',
   },
   {
-    name: 'Contact',
-    href: '#',
+    name: 'Trainingsaanbod',
+    href: '/trainingsaanbod',
+  },
+  {
+    name: 'Partners',
+    href: '/partners',
   },
 ];
 
@@ -27,9 +41,13 @@ const Layout = ({ children }) => (
       links={links.map((link) => {
         const { name, href } = link;
         return (
-          <Typography variant="subtitle2">
-            {name}
-          </Typography>
+          <Link href={href} passHref>
+            <StyledAnchor>
+              <StyledTypography variant="subtitle2">
+                {name}
+              </StyledTypography>
+            </StyledAnchor>
+          </Link>
         );
       })}
     />
