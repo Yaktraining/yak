@@ -94,6 +94,15 @@ const theme = createTheme({
         },
       },
     },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          '&$hover': {
+            backgroundColor: 'transparent',
+          },
+        },
+      },
+    },
   },
 });
 

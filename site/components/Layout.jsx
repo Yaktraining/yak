@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import Navigation from './Navigation';
+import Footer from './Footer';
 import Typography from './Typography';
 
 const StyledAnchor = styled.a`
@@ -9,7 +10,11 @@ const StyledAnchor = styled.a`
 `;
 
 const StyledTypography = styled(Typography)`
-  padding: 0 24px;
+  padding: 12px 0;
+
+  @media (min-width: 1024px) {
+    padding: 0 24px;
+  }
 `;
 
 const links = [
@@ -52,7 +57,20 @@ const Layout = ({ children }) => (
       })}
     />
     {children}
-    <footer>footer</footer>
+    <Footer
+      links={links.map((link) => {
+        const { name, href } = link;
+        return (
+          <Link href={href} passHref>
+            <StyledAnchor>
+              <StyledTypography variant="subtitle2">
+                {name}
+              </StyledTypography>
+            </StyledAnchor>
+          </Link>
+        );
+      })}
+    />
   </>
 );
 

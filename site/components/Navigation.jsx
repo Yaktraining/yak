@@ -5,7 +5,9 @@ import AppBar from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
+import Image from 'next/image';
 import Drawer from './Drawer';
+import logo from '../public/logo.svg';
 
 const StyledToolbar = styled(Toolbar)`
   && {
@@ -34,6 +36,16 @@ const StyledAppBar = styled(AppBar)`
   }
 `;
 
+const Logo = styled.div`
+  &&& {
+    margin: 0 auto;
+
+    @media(min-width: 1024px) {
+      margin: 0;
+    }
+  }
+`;
+
 const Navigation = ({ links }) => {
   const [open, setOpen] = useState(false);
 
@@ -46,8 +58,16 @@ const Navigation = ({ links }) => {
         onClick={handleDrawer}
         color="inherit"
       >
-        <MenuIcon />
+        <MenuIcon color="primary" />
       </StyledIconButton>
+      <Logo>
+        <Image
+          width={100}
+          height={100}
+          src={logo}
+          alt="Yak"
+        />
+      </Logo>
       <StyledToolbar>
         <Drawer open={open} onClose={handleClose}>
           {links}
