@@ -12,6 +12,8 @@ import logo from '../public/logo.svg';
 const StyledToolbar = styled(Toolbar)`
   && {
     display: none;
+    padding: 0;
+
     @media (min-width: 1024px) {
       display: flex;
       justify-content: flex-end;
@@ -33,6 +35,11 @@ const StyledAppBar = styled(AppBar)`
     display: flex;
     flex-direction: row;
     box-shadow: none;
+    padding: 0 16px;
+
+    @media (min-width: 600px) {
+      padding: 0 0 0 24px;
+    }
   }
 `;
 

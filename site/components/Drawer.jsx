@@ -1,13 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
 import MuiDrawer from '@mui/material/Drawer';
 
+const StyledDrawer = styled(MuiDrawer)`
+  &&& {
+    padding: 24px;
+  }
+`;
+
 const Drawer = ({ children, ...props }) => (
-  <MuiDrawer
+  <StyledDrawer
     {...props}
   >
     {children}
-  </MuiDrawer>
+  </StyledDrawer>
 );
 
 Drawer.propTypes = {

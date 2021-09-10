@@ -17,6 +17,14 @@ const StyledTypography = styled(Typography)`
   }
 `;
 
+const Container = styled.main`
+  padding: 24px 16px;
+
+  @media (min-width: 600px) {
+    padding: 24px;
+  }
+`;
+
 const links = [
   {
     name: 'Home',
@@ -56,7 +64,9 @@ const Layout = ({ children }) => (
         );
       })}
     />
-    {children}
+    <Container>
+      {children}
+    </Container>
     <Footer
       links={links.map((link) => {
         const { name, href } = link;

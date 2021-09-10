@@ -14,7 +14,7 @@ const colors = {
     white: '#ffffff',
   },
   secondary: {
-    main: '#FF7A5A',
+    main: '#D5573B',
   },
 };
 
@@ -94,11 +94,20 @@ const theme = createTheme({
         },
       },
     },
-    MuiButtonBase: {
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          padding: '24px',
+        },
+      },
+    },
+    MuiButton: {
       styleOverrides: {
         root: {
-          '&$hover': {
-            backgroundColor: 'transparent',
+          borderRadius: '30px',
+          padding: '8px 24px',
+          '&:hover': {
+            backgroundColor: '#FFF',
           },
         },
       },
