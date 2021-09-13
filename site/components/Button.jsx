@@ -4,8 +4,12 @@ import MuiButton from '@mui/material/Button';
 
 const StyledMuiButton = styled(MuiButton)`
   ${(props) => props.reversed && `
-    background-color: #fff;
+    background-color: #ffffff;
     color: #D5573B;
+
+    &:hover {
+      background-color: #ffffff;
+    }
   `
 }
 `;

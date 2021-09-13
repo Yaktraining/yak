@@ -107,8 +107,9 @@ const theme = createTheme({
           borderRadius: '30px',
           padding: '8px 24px',
           '&:hover': {
-            backgroundColor: '#FFF',
+            boxShadow: 'none',
           },
+          boxShadow: 'none',
         },
       },
     },

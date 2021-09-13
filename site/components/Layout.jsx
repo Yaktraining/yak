@@ -17,11 +17,65 @@ const StyledTypography = styled(Typography)`
   }
 `;
 
+export const HeroTypography = styled(Typography)`
+  && {
+    font-size: 1.3rem;
+
+    @media (min-width: 600px) {
+      font-size: 1.8rem;
+    }
+
+    @media (min-width: 720px) {
+      font-size: 3rem;
+    }
+  }
+`;
+
 const Container = styled.main`
   padding: 24px 16px;
 
   @media (min-width: 600px) {
     padding: 24px;
+  }
+`;
+
+const Overlay = styled.div`
+  background-color: ${(props) => props.theme.palette.primary.main};
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 20%;
+`;
+
+const HeroContainer = styled.div`
+  position: relative;
+
+  &&& {
+    img {
+      filter: grayscale(100%) !important;
+    }
+  }
+`;
+
+const HeroText = styled.div`
+  position: absolute;
+  z-index: 15;
+  max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  button {
+    margin-top: 24px;
+
+    @media (min-width: 600px) {
+      margin-top: 40px;
+    }
   }
 `;
 
@@ -48,7 +102,9 @@ const links = [
   },
 ];
 
-const Layout = ({ children }) => (
+const Layout = ({
+  heroImage, children, heroText, button,
+}) => (
   <>
     <Navigation
       links={links.map((link) => {
@@ -64,6 +120,14 @@ const Layout = ({ children }) => (
         );
       })}
     />
+    <HeroContainer>
+      <Overlay />
+      <HeroText>
+        {heroText}
+        {button}
+      </HeroText>
+      {heroImage}
+    </HeroContainer>
     <Container>
       {children}
     </Container>
