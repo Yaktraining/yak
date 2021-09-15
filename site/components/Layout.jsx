@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
+import { maxHeight } from '@mui/system';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Typography from './Typography';
@@ -56,6 +57,19 @@ const HeroContainer = styled.div`
       filter: grayscale(100%) !important;
     }
   }
+
+  @media(min-width: 720px) {
+    ${(props) => props.maxHeight && `
+      max-height: 250px;
+      overflow: hidden;
+
+      &&& {
+        img {
+          margin-top: -300px !important;
+        }
+      }
+    `}
+  }
 `;
 
 const HeroText = styled.div`
@@ -103,7 +117,7 @@ const links = [
 ];
 
 const Layout = ({
-  heroImage, children, heroText, button,
+  heroImage, children, heroText, button, maxHeight,
 }) => (
   <>
     <Navigation
@@ -120,7 +134,7 @@ const Layout = ({
         );
       })}
     />
-    <HeroContainer>
+    <HeroContainer maxHeight={maxHeight}>
       <Overlay />
       <HeroText>
         {heroText}

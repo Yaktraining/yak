@@ -1,11 +1,29 @@
+import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import Layout from '../components/Layout';
+import aanpak from '../public/aanpak.jpg';
+import Layout, { HeroTypography } from '../components/Layout';
 
 export default function OnzeAanpak() {
   return (
-    <Layout>
+    <Layout
+      maxHeight
+      heroImage={(
+        <Image
+          alt="Aanpak"
+          src={aanpak}
+          layout="responsive"
+          width={6000}
+          height={4000}
+          placeholder="blur"
+        />
+    )}
+      heroText={(
+        <HeroTypography variant="h3" color="white">
+          Onze Aanpak
+        </HeroTypography>
+      )}
+    >
       <h1>Onze aanpak</h1>
     </Layout>
   );
