@@ -1,6 +1,6 @@
 import React from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
+import Head from '../components/Head';
 import aanpak from '../public/aanpak.jpg';
 import Layout, { HeroTypography } from '../components/Layout';
 
@@ -24,6 +24,10 @@ export default function OnzeAanpak() {
         </HeroTypography>
       )}
     >
+      <Head
+        title="Onze aanpak"
+        description="Yak aanpak"
+      />
       <h1>Onze aanpak</h1>
     </Layout>
   );

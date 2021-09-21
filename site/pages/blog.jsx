@@ -1,12 +1,17 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import React from 'react';
+import Head from '../components/Head';
 import Layout from '../components/Layout';
 
 export default function Blog() {
   return (
-    <Layout>
-      <h1>blog</h1>
-    </Layout>
+    <>
+      <Head
+        title="Blog"
+        description="Yak Blog"
+      />
+      <Layout>
+        <h1>blog</h1>
+      </Layout>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import MuiButton from '@mui/material/Button';
 
@@ -19,5 +20,13 @@ const Button = ({ children, ...props }) => (
     {children}
   </StyledMuiButton>
 );
+
+Button.propTypes = {
+  children: PropTypes.node,
+};
+
+Button.defaultProps = {
+  children: null,
+};
 
 export default Button;

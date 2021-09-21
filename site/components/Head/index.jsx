@@ -7,17 +7,26 @@ const Head = ({ title, description }) => (
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Open+Sans&display=swap" rel="stylesheet" />
-    <title>{title}</title>
-    <meta
-      name="description"
-      content={description}
-    />
+    {title && description && (
+      <>
+        <title>{title}</title>
+        <meta
+          name="description"
+          content={description}
+        />
+      </>
+    )}
   </NextHead>
 );
 
 Head.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+};
+
+Head.defaultProps = {
+  title: null,
+  description: null,
 };
 
 export default Head;

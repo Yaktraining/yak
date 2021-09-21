@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styled from '@emotion/styled';
-import { maxHeight } from '@mui/system';
 import Navigation from './Navigation';
 import Footer from './Footer';
 import Typography from './Typography';
@@ -124,7 +124,7 @@ const Layout = ({
       links={links.map((link) => {
         const { name, href } = link;
         return (
-          <Link href={href} passHref>
+          <Link href={href} passHref key={href}>
             <StyledAnchor>
               <StyledTypography variant="subtitle2">
                 {name}
@@ -149,7 +149,7 @@ const Layout = ({
       links={links.map((link) => {
         const { name, href } = link;
         return (
-          <Link href={href} passHref>
+          <Link href={href} passHref key={href}>
             <StyledAnchor>
               <StyledTypography variant="subtitle2">
                 {name}
@@ -161,5 +161,21 @@ const Layout = ({
     />
   </>
 );
+
+Layout.propTypes = {
+  heroImage: PropTypes.node,
+  children: PropTypes.node,
+  heroText: PropTypes.string,
+  button: PropTypes.node,
+  maxHeight: PropTypes.bool,
+};
+
+Layout.defaultProps = {
+  heroImage: null,
+  children: null,
+  heroText: null,
+  button: null,
+  maxHeight: false,
+};
 
 export default Layout;

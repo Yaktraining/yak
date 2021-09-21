@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Layout, { HeroTypography } from '../components/Layout';
 import hero from '../public/hero.jpg';
 import Button from '../components/Button';
+import Head from '../components/Head';
 
 export default function Home() {
   return (
@@ -24,6 +25,10 @@ export default function Home() {
         />
       )}
     >
+      <Head
+        title="Yak"
+        description="Creating sustainable engagement"
+      />
       <h1>Home</h1>
     </Layout>
   );

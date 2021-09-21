@@ -34,19 +34,12 @@ Typography.defaultProps = {
 };
 
 Typography.propTypes = {
-  /** Set the text-align on the component */
   align: PropTypes.string,
-  /** Sets the content */
   children: PropTypes.node,
-  /** Change the default html tag */
   tag: PropTypes.string,
-  /** Sets the classname */
   className: PropTypes.string,
-  /**  Truncate with a text overflow ellipsis */
   noWrap: PropTypes.bool,
-  /**  Applies the theme typography styles * */
   variant: PropTypes.string,
-  /**  The color of the component * */
   color: PropTypes.string,
 };
 
