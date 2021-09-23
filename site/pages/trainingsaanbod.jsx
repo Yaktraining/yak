@@ -1,15 +1,36 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import Image from 'next/image';
 import Head from '../components/Head';
+import aanpak from '../public/aanpak.jpg';
+import Layout, { HeroTypography } from '../components/Layout';
 
-export default function TrainingsAanbod() {
+export default function TraingsAanbod() {
   return (
-    <Layout>
+    <>
       <Head
-        title="Trainingsaanbod"
-        description="Yak trainingsaanbod"
+        title="Training en Events"
+        description="Yak Training en Events"
       />
-      <h1>Training en events</h1>
-    </Layout>
+      <Layout
+        maxHeight
+        heroImage={(
+          <Image
+            alt="Aanpak"
+            src={aanpak}
+            layout="responsive"
+            width={6000}
+            height={4000}
+            placeholder="blur"
+          />
+    )}
+        heroText={(
+          <HeroTypography variant="h3" color="white">
+            Training en Events
+          </HeroTypography>
+      )}
+      >
+        <h1>Training en Events</h1>
+      </Layout>
+    </>
   );
 }
