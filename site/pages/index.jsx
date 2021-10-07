@@ -4,6 +4,7 @@ import Layout, { HeroTypography } from '../components/Layout';
 import hero from '../public/hero.jpg';
 import Button from '../components/Button';
 import Head from '../components/Head';
+import Diensten from '../components/Diensten';
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
         title="Yak"
         description="Creating sustainable engagement"
       />
-      <h1>Home</h1>
+      <Diensten />
     </Layout>
   );
 }
