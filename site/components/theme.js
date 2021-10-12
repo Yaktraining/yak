@@ -8,6 +8,7 @@ const typeFaces = {
 const colors = {
   primary: {
     main: '#219653',
+    background: '#dff2e7',
   },
   common: {
     black: '#18191A',
@@ -77,6 +78,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: primary.main,
+      background: primary.background,
     },
     common: {
       black: common.black,

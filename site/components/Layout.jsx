@@ -33,10 +33,10 @@ export const HeroTypography = styled(Typography)`
 `;
 
 const Container = styled.main`
-  padding: 24px 16px;
+  ${(props) => (props.noPadding ? 'padding: 0;' : 'padding: 24px 16px;')}
 
   @media (min-width: 600px) {
-    padding: 24px;
+    ${(props) => (props.noPadding ? 'padding: 0;' : 'padding: 24px;')}
   }
 `;
 
@@ -117,7 +117,7 @@ const links = [
 ];
 
 const Layout = ({
-  heroImage, children, heroText, button, maxHeight,
+  heroImage, children, heroText, button, maxHeight, noPadding,
 }) => (
   <>
     <Navigation
@@ -142,7 +142,7 @@ const Layout = ({
       </HeroText>
       {heroImage}
     </HeroContainer>
-    <Container>
+    <Container noPadding={noPadding}>
       {children}
     </Container>
     <Footer
@@ -165,9 +165,10 @@ const Layout = ({
 Layout.propTypes = {
   heroImage: PropTypes.node,
   children: PropTypes.node,
-  heroText: PropTypes.string,
+  heroText: PropTypes.node,
   button: PropTypes.node,
   maxHeight: PropTypes.bool,
+  noPadding: PropTypes.bool,
 };
 
 Layout.defaultProps = {
@@ -176,6 +177,7 @@ Layout.defaultProps = {
   heroText: null,
   button: null,
   maxHeight: false,
+  noPadding: false,
 };
 
 export default Layout;

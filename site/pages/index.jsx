@@ -9,6 +9,7 @@ import Diensten from '../components/Diensten';
 export default function Home() {
   return (
     <Layout
+      noPadding
       heroText={(
         <HeroTypography variant="h3" color="white">
           Creating Sustainable Engagement
