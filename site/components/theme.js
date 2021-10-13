@@ -8,7 +8,7 @@ const typeFaces = {
 const colors = {
   primary: {
     main: '#219653',
-    background: '#dff2e7',
+    background: '#ebefed',
   },
   common: {
     black: '#18191A',

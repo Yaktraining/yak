@@ -1,17 +1,20 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+import Image from 'next/image';
 import Typography from '@mui/material/Typography';
+import adventure from '../public/adventure.jpeg';
 
 export default function MediaCard() {
   return (
     <Card>
-      <CardMedia
-        component="img"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-        alt="green iguana"
+      <Image
+        alt="Mountains"
+        src={adventure}
+        layout="responsive"
+        width={3}
+        height={2}
+        placeholder="blur"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
